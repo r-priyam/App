@@ -45,7 +45,7 @@
               <PopoverPanel
                 class="absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2"
               >
-                <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-4 overflow-hidden">
+                <div class="rounded-xl shadow-xl ring-1 ring-black ring-opacity-4 overflow-hidden">
                   <div class="relative grid gap-6 bg-gray-700 px-5 py-6 sm:gap-8 sm:p-8">
                     <a
                       v-for="item in solutions"
@@ -93,7 +93,7 @@
             <PopoverButton
             :class="[open ? 'text-green-400' : 'text-gray-200', 'group rounded-sm inline-flex items-center text-base font-medium hover:text-green-400']"
             >
-              <span>More</span>
+              <span>......</span>
               <ChevronDownIcon
               :class="[open ? 'text-green-300' : 'text-gray-200', 'ml-2 h-5 w-5 group-hover:text-green-300']"
                 aria-hidden="true"
@@ -111,7 +111,7 @@
               <PopoverPanel
                 class="absolute z-10 left-1/2 transform -translate-x-1/2 mt-3 px-2 w-screen max-w-md sm:px-0"
               >
-                <div class="rounded-lg shadow-lg ring-1 ring-black ring-opacity-4 overflow-hidden">
+                <div class="rounded-xl shadow-xl ring-1 ring-black ring-opacity-4 overflow-hidden">
                   <div class="relative grid gap-6 bg-gray-700 px-5 py-6 sm:gap-8 sm:p-8">
                     <a
                       v-for="item in resources"
@@ -130,11 +130,11 @@
                       </div>
                     </a>
                   </div>
-                  <div class="px-5 py-5 bg-gray-50 sm:px-8 sm:py-8">
+                  <div class="px-5 py-5 bg-gray-100 sm:px-8 sm:py-8">
                     <div>
                       <h3
                         class="text-sm tracking-wide font-medium text-gray-600 uppercase"
-                      >Recent Posts</h3>
+                      >......</h3>
                       <ul class="mt-4 space-y-4">
                         <li v-for="post in recentPosts" :key="post.id" class="text-base truncate">
                           <a
@@ -145,8 +145,8 @@
                       </ul>
                     </div>
                     <div class="mt-5 text-sm">
-                      <a href="#" class="font-medium text-gray-600 hover:text-gray-500">
-                        View all posts
+                      <a href="#" class="font-medium text-gray-500 hover:text-gray-600">
+                        ............
                         <span aria-hidden="true">&rarr;</span>
                       </a>
                     </div>
@@ -222,9 +222,9 @@
           </div>
           <div class="py-6 px-5 space-y-6">
             <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-              <a href="#" class="text-base font-medium text-gray-200 hover:text-green-500">Pricing</a>
+              <a href="#" class="text-base font-medium text-gray-200 hover:text-green-500">......</a>
 
-              <a href="#" class="text-base font-medium text-gray-200 hover:text-green-500">Docs</a>
+              <a href="#" class="text-base font-medium text-gray-200 hover:text-green-500">......</a>
               <a
                 v-for="item in resources"
                 :key="item.name"
@@ -273,60 +273,60 @@ import { ChevronDownIcon } from '@heroicons/vue/solid';
 
 const solutions = [
 	{
-		name: 'Analytics',
-		description: 'Get a better understanding of where your traffic is coming from.',
+		name: '......',
+		description: '......',
 		href: '#',
 		icon: ChartBarIcon,
 	},
 	{
-		name: 'Engagement',
-		description: 'Speak directly to your customers in a more meaningful way.',
+		name: '......',
+		description: '......',
 		href: '#',
 		icon: CursorClickIcon,
 	},
-	{ name: 'Security', description: 'Your customers\' data will be safe and secure.', href: '#', icon: ShieldCheckIcon },
+	{ name: '......', description: '......', href: '#', icon: ShieldCheckIcon },
 	{
-		name: 'Integrations',
-		description: 'Connect with third-party tools that you\'re already using.',
+		name: '......',
+		description: '......',
 		href: '#',
 		icon: ViewGridIcon,
 	},
 	{
-		name: 'Automations',
-		description: 'Build strategic funnels that will drive your customers to convert',
+		name: '......',
+		description: '......',
 		href: '#',
 		icon: RefreshIcon,
 	},
 ];
 const callsToAction = [
-	{ name: 'Watch Demo', href: '#', icon: PlayIcon },
-	{ name: 'Contact Sales', href: '#', icon: PhoneIcon },
+	{ name: '......', href: '#', icon: PlayIcon },
+	{ name: '......', href: '#', icon: PhoneIcon },
 ];
 const resources = [
 	{
-		name: 'Help Center',
-		description: 'Get all of your questions answered in our forums or contact support.',
+		name: '......',
+		description: '......',
 		href: '#',
 		icon: SupportIcon,
 	},
 	{
-		name: 'Guides',
-		description: 'Learn how to maximize our platform to get the most out of it.',
+		name: '......',
+		description: '......',
 		href: '#',
 		icon: BookmarkAltIcon,
 	},
 	{
-		name: 'Events',
-		description: 'See what meet-ups and other events we might be planning near you.',
+		name: '......',
+		description: '......',
 		href: '#',
 		icon: CalendarIcon,
 	},
-	{ name: 'Security', description: 'Understand how we take your privacy seriously.', href: '#', icon: ShieldCheckIcon },
+	{ name: '......', description: '......', href: '#', icon: ShieldCheckIcon },
 ];
 const recentPosts = [
-	{ id: 1, name: 'Boost your conversion rate', href: '#' },
-	{ id: 2, name: 'How to use search engine optimization to drive traffic to your site', href: '#' },
-	{ id: 3, name: 'Improve your customer experience', href: '#' },
+	{ id: 1, name: '......', href: '#' },
+	{ id: 2, name: '......', href: '#' },
+	{ id: 3, name: '......', href: '#' },
 ];
 
 export default {
