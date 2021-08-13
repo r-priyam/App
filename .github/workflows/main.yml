@@ -18,6 +18,3 @@ jobs:
 
       - name: Run ESLint
         run: npm run lint
-      
-      - name: Run ESLintFix
-        run: npm run lint:fix
