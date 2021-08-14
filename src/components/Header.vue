@@ -27,7 +27,7 @@
             <PopoverButton
               :class="[open ? 'text-green-300' : 'text-gray-200', 'group rounded-md inline-flex items-center text-base font-medium hover:text-green-400']"
             >
-              <span>Solutions</span>
+              <span>.....</span>
               <ChevronDownIcon
                 :class="[open ? 'text-green-500' : 'text-gray-200', 'ml-2 h-5 w-5 group-hover:text-green-400']"
                 aria-hidden="true"
@@ -86,8 +86,8 @@
             </transition>
           </Popover>
 
-          <a href="#" class="text-base font-medium text-gray-200 hover:text-green-400">Pricing</a>
-          <a href="#" class="text-base font-medium text-gray-200 hover:text-green-400">Docs</a>
+          <a href="#" class="text-base font-medium text-gray-200 hover:text-green-400">......</a>
+          <a href="#" class="text-base font-medium text-gray-200 hover:text-green-400">......</a>
 
           <Popover class="relative" v-slot="{ open }">
             <PopoverButton
@@ -238,7 +238,7 @@
                 class="w-full flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white bg-green-500 hover:bg-green-600"
               >Sign up</a>
               <p class="mt-6 text-center text-base font-medium text-gray-200">
-                Existing customer?
+                Write what you want to write lol
                 {{ ' ' }}
                 <a
                   href="#"
