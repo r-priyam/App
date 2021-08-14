@@ -1,0 +1,24 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+	.popover-panel {
+		@apply absolute z-10 -ml-4 mt-3 transform px-2 w-screen max-w-md sm:px-0 lg:ml-0 lg:left-1/2 lg:-translate-x-1/2;
+	}
+	.popover-container {
+		@apply rounded-xl shadow-xl overflow-hidden;
+	}
+	.popover-panel-grid {
+		@apply bg-primary-dark gap-6 grid px-5 py-6 relative rounded-lg sm:gap-8 sm:p-8;
+	}
+	.popover-panel-grid-item {
+		@apply -m-3 flex hover:bg-secondary items-start p-2 rounded-lg;
+	}
+	.navbar-drop-arrow {
+		@apply rounded-sm inline-flex items-center text-base font-medium hover:text-gray-300;
+	}
+	.navbar-open-menu {
+		@apply focus:outline-none hover:text-gray-400 inline-flex items-center justify-center p-2 rounded-md text-gray-300;
+	}
+}
