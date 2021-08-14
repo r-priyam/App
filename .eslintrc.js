@@ -4,7 +4,6 @@ module.exports = {
 		requireConfigFile: false,
 	},
 	env: {
-		jest: true,
 		browser: true,
 		es2021: true,
 	},
