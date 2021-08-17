@@ -21,6 +21,7 @@
 		"@vue-hero-icons/outline": "^1.7.2",
 		"@vue-hero-icons/solid": "^1.7.2",
 		"@vue/babel-preset-app": "^4.5.13",
+		"@vueuse/core": "^6.0.0",
 		"autoprefixer": "^10.3.1",
 		"babel-plugin-module-resolver": "^4.1.0",
 		"eslint-config-marine": "^9.0.6",

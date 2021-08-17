@@ -1,13 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.svg" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>App</title>
-  </head>
-  <body>
-    <div id="app"></div>
-    <script type="module" src="/src/main.js"></script>
-  </body>
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>App</title>
+	</head>
+	<body>
+		<noscript>
+			<strong
+				>Sorry, This website doesn't work properly without JavaScript enabled. Please enable it to see the
+				site..</strong
+			>
+		</noscript>
+		<script>
+			(() => {
+				const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+				const persistedColorPreference = localStorage.getItem('theme') || 'auto';
+				if (persistedColorPreference === 'dark' || (prefersDarkMode && persistedColorPreference !== 'light')) {
+					document.documentElement.classList.toggle('dark', true);
+				}
+			})();
+		</script>
+		<div id="app" class="h-full"></div>
+		<script type="module" src="/src/main.js"></script>
+	</body>
 </html>

@@ -1,5 +1,5 @@
 <template>
-	<div class="relative min-h-screen bg-primary">
+	<div class="relative min-h-screen bg-white dark:bg-primary">
 		<Header />
 	</div>
 </template>

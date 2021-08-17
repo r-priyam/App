@@ -11,9 +11,7 @@
           </a>
         </div>
         <div class="-mr-2 -my-2 md:hidden">
-          <PopoverButton
-            class="navbar-open-menu"
-          >
+          <PopoverButton class="navbar-open-menu">
             <span class="sr-only">Open menu</span>
             <MenuIcon class="h-6 w-6" aria-hidden="true" />
           </PopoverButton>
@@ -148,6 +146,22 @@
           </Popover>
         </PopoverGroup>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
+          <button
+            class="rounded-md p-2 mr-8 inline-flex items-center justify-center hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary focus:bg-primary-light"
+            :aria-label="`Switch to ${isDarkMode ? 'light theme' : 'dark theme'}`"
+            @click="toggleDarkMode()"
+          >
+            <SunIcon
+              v-if="!isDarkMode"
+              class="fill-current text-white hover:text-gray-200 h-6 w-6"
+              aria-hidden="true"
+            />
+            <MoonIcon
+              v-else
+              class="fill-current text-white hover:text-gray-200 h-6 w-6"
+              aria-hidden="true"
+            />
+          </button>
           <a
             href="#"
             class="whitespace-nowrap text-base font-medium text-white hover:text-green-400"
@@ -168,19 +182,22 @@
       leave-from-class="opacity-100 scale-100"
       leave-to-class="opacity-0 scale-95"
     >
-    <PopoverPanel focus class="absolute inset-x-0 md:hidden origin-top-right p-2 top-0 transform transition z-10">
-          <div class="bg-primary-dark divide-primary-light divide-y-2 ring-1 ring-black ring-opacity-5 rounded-lg shadow-lg">
-            <div class="px-5 pt-5 pb-6">
-              <div class="flex items-center justify-between">
-                <div>
-                <img
-                  class="h-8 w-auto"
-                  src="../assets/favicon.svg"
-                  alt="Workflow"
-                />
+      <PopoverPanel
+        focus
+        class="absolute inset-x-0 md:hidden origin-top-right p-2 top-0 transform transition z-10"
+      >
+        <div
+          class="bg-primary-dark divide-primary-light divide-y-2 ring-1 ring-black ring-opacity-5 rounded-lg shadow-lg"
+        >
+          <div class="px-5 pt-5 pb-6">
+            <div class="flex items-center justify-between">
+              <div>
+                <img class="h-8 w-auto" src="../assets/favicon.svg" alt="Workflow" />
               </div>
               <div class="-mr-2">
-                <PopoverButton class="focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-dark hover:text-gray-400 inline-flex items-center justify-center p-2 rounded-md text-gray-300">
+                <PopoverButton
+                  class="focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-dark hover:text-gray-400 inline-flex items-center justify-center p-2 rounded-md text-gray-300"
+                >
                   <span class="sr-only">Close menu</span>
                   <XIcon class="h-6 w-6" aria-hidden="true" />
                 </PopoverButton>
@@ -229,6 +246,25 @@
                   class="text-secondary-light hover:text-secondary-dark"
                 >Sign in</a>
               </p>
+              <br />
+              <div class="text-center">
+                <button
+                  class="rounded-md p-2 mr-8 inline-flex items-center justify-center hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary focus:bg-primary-light"
+                  :aria-label="`Switch to ${isDarkMode ? 'light theme' : 'dark theme'}`"
+                  @click="toggleDarkMode()"
+                >
+                  <SunIcon
+                    v-if="!isDarkMode"
+                    class="fill-current text-white hover:text-gray-200 h-6 w-6"
+                    aria-hidden="true"
+                  />
+                  <MoonIcon
+                    v-else
+                    class="fill-current text-white hover:text-gray-200 h-6 w-6"
+                    aria-hidden="true"
+                  />
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -239,6 +275,7 @@
 
 
 <script>
+import { ref } from 'vue';
 import { Popover, PopoverButton, PopoverGroup, PopoverPanel } from '@headlessui/vue';
 import {
 	BookmarkAltIcon,
@@ -253,9 +290,13 @@ import {
 	SupportIcon,
 	ViewGridIcon,
 	XIcon,
+	SunIcon,
+	MoonIcon
 } from '@heroicons/vue/outline';
 import { ChevronDownIcon } from '@heroicons/vue/solid';
+import { useDark, useToggle } from '@vueuse/core';
 
+const enabled = ref(false);
 const solutions = [
 	{
 		name: '......',
@@ -323,13 +364,20 @@ export default {
 		ChevronDownIcon,
 		MenuIcon,
 		XIcon,
+		SunIcon,
+		MoonIcon
 	},
 	setup() {
+		const isDarkMode = useDark({ storageKey: 'theme' });
+		const toggleDarkMode = useToggle(isDarkMode);
 		return {
 			solutions,
 			callsToAction,
 			resources,
 			recentPosts,
+			enabled,
+			isDarkMode,
+			toggleDarkMode,
 		};
 	},
 };
