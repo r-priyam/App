@@ -21,7 +21,7 @@
             <PopoverButton
               :class="[open ? 'text-gray-300' : 'text-white', 'group rounded-md inline-flex items-center text-base font-medium hover:text-gray-300']"
             >
-              <span>Name Here</span>
+              <span>Item One</span>
               <ChevronDownIcon
                 :class="[open ? 'text-gray-300' : 'text-white', 'ml-2 h-5 w-5 group-hover:text-gray-300']"
                 aria-hidden="true"
@@ -79,14 +79,14 @@
             </transition>
           </Popover>
 
-          <a href="#" class="text-base font-medium text-white hover:text-gray-300">......</a>
-          <a href="#" class="text-base font-medium text-white hover:text-gray-300">......</a>
+          <a href="#" class="text-base font-medium text-white hover:text-gray-300">Item Two</a>
+          <a href="#" class="text-base font-medium text-white hover:text-gray-300">Item Three</a>
 
           <Popover class="relative" v-slot="{ open }">
             <PopoverButton
               :class="[open ? 'text-gray-300' : 'text-white', 'group navbar-drop-arrow']"
             >
-              <span>......</span>
+              <span>Item Four</span>
               <ChevronDownIcon
                 :class="[open ? 'text-green-300' : 'text-white', 'ml-2 h-5 w-5 group-hover:text-gray-300']"
                 aria-hidden="true"
@@ -123,7 +123,7 @@
                   </div>
                   <div class="px-5 py-5 bg-gray-100 sm:px-8 sm:py-8">
                     <div>
-                      <h3 class="text-sm tracking-wide font-medium text-gray-600 uppercase">......</h3>
+                      <h3 class="text-sm tracking-wide font-medium text-gray-600 uppercase">Item</h3>
                       <ul class="mt-4 space-y-4">
                         <li v-for="post in recentPosts" :key="post.id" class="text-base truncate">
                           <a
@@ -135,7 +135,7 @@
                     </div>
                     <div class="mt-5 text-sm">
                       <a href="#" class="font-medium text-gray-500 hover:text-gray-600">
-                        ............
+                        ItemItem
                         <span aria-hidden="true">&rarr;</span>
                       </a>
                     </div>
@@ -147,7 +147,7 @@
         </PopoverGroup>
         <div class="hidden md:flex items-center justify-end md:flex-1 lg:w-0">
           <button
-            class="rounded-md p-2 mr-8 inline-flex items-center justify-center hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary focus:bg-primary-light"
+            class="rounded-md p-2 mr-6 inline-flex items-center justify-center hover:bg-primary-light focus:outline-none focus:ring-2 focus:ring-inset focus:ring-secondary focus:bg-primary-light"
             :aria-label="`Switch to ${isDarkMode ? 'light theme' : 'dark theme'}`"
             @click="toggleDarkMode()"
           >
@@ -164,7 +164,7 @@
           </button>
           <a
             href="#"
-            class="whitespace-nowrap text-base font-medium text-white hover:text-green-400"
+            class="whitespace-nowrap inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-md shadow-sm text-base font-medium text-white hover:bg-primary-light hover:text-secondary-light"
           >Sign in</a>
           <a
             href="#"
@@ -196,7 +196,7 @@
               </div>
               <div class="-mr-2">
                 <PopoverButton
-                  class="focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-dark hover:text-gray-400 inline-flex items-center justify-center p-2 rounded-md text-gray-300"
+                  class="focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-dark hover:text-gray-400 hover:bg-primary-light inline-flex items-center justify-center p-2 rounded-md text-gray-300"
                 >
                   <span class="sr-only">Close menu</span>
                   <XIcon class="h-6 w-6" aria-hidden="true" />
@@ -209,7 +209,7 @@
                   v-for="item in solutions"
                   :key="item.name"
                   :href="item.href"
-                  class="-m-3 p-3 flex items-center rounded-md hover:bg-green-600"
+                  class="-m-3 p-3 flex items-center rounded-md hover:bg-secondary-dark"
                 >
                   <component
                     :is="item.icon"
@@ -223,14 +223,14 @@
           </div>
           <div class="py-6 px-5 space-y-6">
             <div class="grid grid-cols-2 gap-y-4 gap-x-8">
-              <a href="#" class="text-base font-medium text-gray-200 hover:text-green-500">......</a>
+              <a href="#" class="text-base font-medium text-gray-200 hover:text-secondary-dark">Item</a>
 
-              <a href="#" class="text-base font-medium text-gray-200 hover:text-green-500">......</a>
+              <a href="#" class="text-base font-medium text-gray-200 hover:text-secondary-dark">Item</a>
               <a
                 v-for="item in resources"
                 :key="item.name"
                 :href="item.href"
-                class="text-base font-medium text-gray-200 hover:text-green-500"
+                class="text-base font-medium text-gray-200 hover:text-secondary-dark"
               >{{ item.name }}</a>
             </div>
             <div>
@@ -299,60 +299,60 @@ import { useDark, useToggle } from '@vueuse/core';
 const enabled = ref(false);
 const solutions = [
 	{
-		name: '......',
-		description: '......',
+		name: 'Item',
+		description: 'Item',
 		href: '#',
 		icon: ChartBarIcon,
 	},
 	{
-		name: '......',
-		description: '......',
+		name: 'Item',
+		description: 'Item',
 		href: '#',
 		icon: CursorClickIcon,
 	},
-	{ name: '......', description: '......', href: '#', icon: ShieldCheckIcon },
+	{ name: 'Item', description: 'Item', href: '#', icon: ShieldCheckIcon },
 	{
-		name: '......',
-		description: '......',
+		name: 'Item',
+		description: 'Item',
 		href: '#',
 		icon: ViewGridIcon,
 	},
 	{
-		name: '......',
-		description: '......',
+		name: 'Item',
+		description: 'Item',
 		href: '#',
 		icon: RefreshIcon,
 	},
 ];
 const callsToAction = [
-	{ name: '......', href: '#', icon: PlayIcon },
-	{ name: '......', href: '#', icon: PhoneIcon },
+	{ name: 'Item', href: '#', icon: PlayIcon },
+	{ name: 'Item', href: '#', icon: PhoneIcon },
 ];
 const resources = [
 	{
-		name: '......',
-		description: '......',
+		name: 'Item',
+		description: 'Item',
 		href: '#',
 		icon: SupportIcon,
 	},
 	{
-		name: '......',
-		description: '......',
+		name: 'Item',
+		description: 'Item',
 		href: '#',
 		icon: BookmarkAltIcon,
 	},
 	{
-		name: '......',
-		description: '......',
+		name: 'Item',
+		description: 'Item',
 		href: '#',
 		icon: CalendarIcon,
 	},
-	{ name: '......', description: '......', href: '#', icon: ShieldCheckIcon },
+	{ name: 'Item', description: 'Item', href: '#', icon: ShieldCheckIcon },
 ];
 const recentPosts = [
-	{ id: 1, name: '......', href: '#' },
-	{ id: 2, name: '......', href: '#' },
-	{ id: 3, name: '......', href: '#' },
+	{ id: 1, name: 'Item', href: '#' },
+	{ id: 2, name: 'Item', href: '#' },
+	{ id: 3, name: 'Item', href: '#' },
 ];
 
 export default {
